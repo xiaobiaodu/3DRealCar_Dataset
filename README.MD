@@ -7,8 +7,8 @@
 
 
 ## 😮 Highlights
-- Our 3DRealCar is the first large-scale 3D real car dataset containing densely captured RGB-D images and point clouds.
--  This dataset is the first providing 3D car parsing map annotations.
+- Our 3DRealCar is the first large-scale 3D real car dataset containing both densely captured RGB-D images and point clouds.
+-  This dataset is the first to provide 3D car parsing map annotations.
 
 
 ## 🚩 **Updates**
