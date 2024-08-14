@@ -1,4 +1,5 @@
 **install**
+**install**
 ```
 # install colmap
 apt-get install colmap
@@ -10,6 +11,13 @@ pip install colorama plyfile open3d kornia tqdm imageio imageio[ffmpeg] opencv-p
 wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth && mv sam_vit_h_4b8939.pth resources/models/
 pip install submodules/GroundingDINO
 pip install supervision segment_anything
+```
+
+**data**
+```
+# data path structure example: 
+/path/raw_data/dataset_name/3dscanner_origin/xxxx(png or json)
+# for example: /realcar3D/demo_data/raw_data/2024_04_11_11_31_27/3dscanner_origin
 ```
 
 **run**
