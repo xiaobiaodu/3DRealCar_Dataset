@@ -1,43 +1,21 @@
-# 1. Environment
-## 1.1 Env variables
-**CUDA**
+**install**
 ```
-# use cuda-11.7 by default since torch1.13.1 is compatible with cuda-11.7, remember to link /usr/local/cuda-11.7 to /usr/local/cuda
-CUDA_HOME="/usr/local/cuda"
-export PATH=${CUDA_HOME}/bin:$PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${CUDA_HOME}/lib64
+# install colmap
+apt-get install colmap
+
+# install some python package
+pip install colorama plyfile open3d kornia tqdm imageio imageio[ffmpeg] opencv-python
+
+# other you need install GroudingDino and SAM
+wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth && mv sam_vit_h_4b8939.pth resources/models/
+pip install submodules/GroundingDINO
+pip install supervision segment_anything
 ```
 
-**Colmap**
+**run**
 ```
-pip install colmap
-```
+# for example, DATASET_NAME=2024_04_11_11_31_27, EXP_NAME=demo
 
-**Python**
-```
-# source code for python 3.10.12: /mnt/volumes/jointmodel/bicheng/install/Python-3.10.12
-# optimized building for python 3.10.12: /home/root/.envs/py3_10_12
-# base virtualenv (python3.10.12+pytorch1.13.1+CUDA11.7): /mnt/volumes/jointmodel/bicheng/envs/py310/bin/python
-
-# Create new virtualenv based on base env
-virtualenv -p /home/root/.envs/py3_10_12 $SAVE_PATH
-
-# Activate base virtualenv for LiGS
-source /mnt/volumes/jointmodel/bicheng/envs/py310_ligs/bin/activate
-
-# Deactivate virtualenv
-source deactivate
-```
-
-**Pytorch&Essential Packages**
-```
-pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
-pip install colorama ipython matplotlib tqdm pyyaml easydict open3d scikit-learn scikit-image imageio imageio[ffmpeg] opencv-python ninja plyfile tensorboardx
-```
-
-## 3. Pipeline
-***Preparation for datasets***
-```
 # Preprocess progress: colmap -> segmentation -> pcd_clean -> pcd_standard -> pcd_rescale
 
 # colmap: use colmap to extract camera intrinsics and extrinsics.
