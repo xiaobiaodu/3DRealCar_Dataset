@@ -1,7 +1,7 @@
-source ~/.bashrc
+# source ~/.bashrc
 dataset_name=$1
 command=$2
-exp_name=$3
+exp_name=$3 
 if [ -z ${dataset_name} ]; then
     echo "Must give dataset_name"
     exit 0;
@@ -15,35 +15,17 @@ if [ -z ${exp_name} ]; then
     exit 0;
 fi
 # RDMA
-upload_dir=../data/raw_data
-dataset_dir=../data/processed_data
+upload_dir=/path/to/rawdata/path
+dataset_dir=/path/to/save/path
+codebase_dir=/path/to/3DRealCar_Dataset/data_preprocess
+cd ${codebase_dir}
+
 # currently we only use colmap data
 processed_type=colmap
 processed_dataset_dir=${dataset_dir}/${dataset_name}/${processed_type}_processed
 
 # change to your own yaml
 yaml_fn=resources/configs/${exp_name}.yaml
-# change to your save directory
-percep_dir=/lpai/volumes/lmm-data-proc/shy/realcar3D/demo_data/models
-percep_log_dir=${percep_dir}/${dataset_name}/${exp_name}
-log_dir=${percep_log_dir}
-# tensorboard_dir=/lpai/tensorboard/bicheng/ligs
-percep_asset_dir=/lpai/volumes/lmm-data-proc/shy/realcar3D/demo_data/assets/${dataset_name}/${exp_name}
-# change to your export directory
-export_dir=${log_dir}/export
-# change to your infer directory
-infer_dir=${log_dir}/infer
-# change to your test directory
-test_dir=${log_dir}/test
-benchmark_list=resources/eval_dataset_name_1.txt
-
-# change to your LPAI project uid and name
-n_gpus=1
-jobs_per_gpu=1
-lpai_project_uid=${LPAI_PROJECT_UID}
-lpai_project_name=${LPAI_PROJECT_NAME}
-lpai_namespace=${LPAI_NAMESPACE}
-cluster=${CLUSTER}
 
 ################################################################################
 # Get processed type
@@ -152,7 +134,8 @@ if [ $command == 'pcd_standard' ]; then
         --yaml ${yaml_fn} \
         --dataset_dir ${processed_dataset_dir}/${pcd_clean_dir} \
         --save_dir ${processed_dataset_dir}/${pcd_standard_dir} \
-        --dataset_name ${dataset_name}
+        --dataset_name ${dataset_name} \
+        --manual_setting resources/pcd_standard.txt
     cp ${processed_dataset_dir}/${pcd_clean_dir}/trainval.meta ${processed_dataset_dir}/${pcd_standard_dir}/
     python3 utils/toolkit/visualize_dataset.py \
         --yaml ${yaml_fn} \
