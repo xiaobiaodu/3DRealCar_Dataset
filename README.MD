@@ -21,7 +21,7 @@ Welcome to **watch** 👀 this repository for the latest updates.
 
 ✅ **[2024.8.13]** : Code is realeased. 
 
-✅ **[2024.8.15]** : We are releasing our dataset. You can download our dataset in the project page. 
+✅ **[2024.8.15]** : We are releasing our dataset. You can download our dataset in the [project page](https://xiaobiaodu.github.io/3drealcar/). 
 
 
 
@@ -32,6 +32,18 @@ Please refer to our code [data_preprocess](data_preprocess)
 
 
 
+
+## ✏️ Citation
+If you find our paper and code useful in your research, please consider giving a star :star: and citation :pencil:.
+
+```BibTeX
+@article{du20243drealcar,
+  title={3DRealCar: An In-the-wild RGB-D Car Dataset with 360-degree Views},
+  author={Du, Xiaobiao and Sun, Haiyang and Wang, Shuyun and Wu, Zhuojie and Sheng, Hongwei and Ying, Jiaying and Lu, Ming and Zhu, Tianqing and Zhan, Kun and Yu, Xin},
+  journal={arXiv preprint arXiv:2406.04875},
+  year={2024}
+}
+```
 
 
 
