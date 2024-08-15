@@ -1,5 +1,4 @@
-**install**
-**install**
+## Preperation
 ```
 # install colmap
 apt-get install colmap
@@ -13,14 +12,14 @@ pip install submodules/GroundingDINO
 pip install supervision segment_anything
 ```
 
-**data**
+**Data**
 ```
 # data path structure example: 
 /path/raw_data/dataset_name/3dscanner_origin/xxxx(png or json)
 # for example: /realcar3D/demo_data/raw_data/2024_04_11_11_31_27/3dscanner_origin
 ```
 
-**run**
+## Run
 ```
 # for example, DATASET_NAME=2024_04_11_11_31_27, EXP_NAME=demo
 

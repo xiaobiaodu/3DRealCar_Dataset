@@ -18,14 +18,17 @@ Welcome to **watch** 👀 this repository for the latest updates.
 ✅ **[2024.6.10]** : We have released our paper, 3DRealCar on [arXiv](https://arxiv.org/html/2406.04875v1).
 
 ✅ **[2024.6.10]** : Release [project page](https://xiaobiaodu.github.io/3drealcar/).
-- [ ] Code and Dataset release. (Our paper is currently under review. We will release our dataset and code upon the acceptance of this paper.) 
+
+✅ **[2024.8.13]** : Code is realeased. 
+
+✅ **[2024.8.15]** : We are releasing our dataset. You can download our dataset in the project page. 
 
 
 
 
+## How to use
 
-
-
+Please refer to our code [data_preprocess](data_preprocess)
 
 
 
