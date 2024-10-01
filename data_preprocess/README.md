@@ -17,6 +17,11 @@ pip install supervision segment_anything
 # data path structure example: 
 /path/raw_data/dataset_name/3dscanner_origin/xxxx(png or json)
 # for example: /realcar3D/demo_data/raw_data/2024_04_11_11_31_27/3dscanner_origin
+
+# Run below code to rearrange dataset
+cd DATASET_NAME
+mkdir 3dscanner_origin
+mv *.* 3dscanner_origin
 ```
 
 ## Run
