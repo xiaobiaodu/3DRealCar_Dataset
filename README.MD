@@ -15,7 +15,6 @@
 
 Welcome to **watch** 👀 this repository for the latest updates.
 
-✅ **[2025.1.21]** : Release 3DRealCar dataset [download page](https://xiaobiaodu.github.io/3drealcar/download.html). 
 
 ✅ **[2024.6.10]** : We have released our paper, 3DRealCar on [arXiv](https://arxiv.org/html/2406.04875v1).
 
@@ -25,6 +24,7 @@ Welcome to **watch** 👀 this repository for the latest updates.
 
 ✅ **[2024.8.15]** : We are releasing our dataset. You can download our dataset in the [project page](https://xiaobiaodu.github.io/3drealcar/). 
 
+✅ **[2025.1.21]** : Release 3DRealCar dataset [download page](https://xiaobiaodu.github.io/3drealcar/download.html). 
 
 
 
