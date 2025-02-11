@@ -5,7 +5,7 @@
 
 
 ## Free Commercial Usage
-3DRealCar dataset is allowed commercial usage for free. The dataset license is Apache-2.0. 
+**3DRealCar dataset is allowed commercial usage for free. The dataset license is Apache-2.0.** 
 
 ## 😮 Highlights
 - Our 3DRealCar is the first large-scale 3D real car dataset containing both densely captured RGB-D images and point clouds.
