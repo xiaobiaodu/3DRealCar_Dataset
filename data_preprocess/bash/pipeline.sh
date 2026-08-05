@@ -68,9 +68,13 @@ if [ $command == 'dataset' ]; then
     exit 0;
 fi
 
+
 ################################################################################
 # Extract semantic segmentation
 ################################################################################
+
+max_attempts=1
+
 # TODO: should fix bug when alpha channel is incorrect!
 if [ $command == 'segmentation' ]; then
     if [ ! -f ${processed_dataset_dir}/.dataset ]; then
@@ -81,8 +85,7 @@ if [ $command == 'segmentation' ]; then
         echo "Skip ${command} since has been already processed!"
         exit 0;
     fi
-    while true
-    do
+    for ((attempt=1; attempt<=max_attempts; attempt++)); do
         # Sometimes docker may not download SAM models from huggingface
         python3 utils/toolkit/extract_segmentation.py \
             --yaml ${yaml_fn} \
@@ -90,7 +93,9 @@ if [ $command == 'segmentation' ]; then
         if [ -f ${processed_dataset_dir}/.segmentation ]; then
             exit 0;
         fi
+        echo "Attempt ${attempt} failed."
     done
+    echo "Segmentation failed after ${max_attempts} attempts."
     exit 0;
 fi
 
@@ -167,4 +172,3 @@ if [ $command == 'pcd_rescale' ]; then
     touch ${processed_dataset_dir}/.processed
     exit 0;
 fi
-
